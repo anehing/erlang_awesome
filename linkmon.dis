@@ -1,0 +1,221 @@
+0000000020D0E3F0: i_func_info_IaaI 0 linkmon myproc 0 
+0000000020D0E418: allocate_tt 0 0 
+0000000020D0E428: i_move_call_ext_ce 5000 timer:sleep/1 
+0000000020D0E440: move_cr reason r(0) 
+0000000020D0E450: call_bif_e erlang:exit/1 
+
+0000000020D0E460: i_func_info_IaaI 0 linkmon chain 1 
+0000000020D0E488: i_is_eq_exact_immed_frc f(0000000020D0E508) r(0) 0 
+0000000020D0E4A0: i_loop_rec_f f(0000000020D0E4C8) 
+0000000020D0E4B0: remove_message 
+0000000020D0E4B8: move_return_c ok 
+0000000020D0E4C8: i_wait_timeout_locked_fI f(0000000020D0E4A0) 2000 
+0000000020D0E4E0: timeout 
+0000000020D0E4E8: move_cr "chain dies here" r(0) 
+0000000020D0E4F8: call_bif_e erlang:exit/1 
+0000000020D0E508: allocate_tt 0 1 
+0000000020D0E518: i_make_fun_It 550577712 1 
+0000000020D0E530: i_call_ext_e erlang:spawn/1 
+0000000020D0E540: call_bif_e erlang:link/1 
+0000000020D0E550: i_loop_rec_f f(0000000020D0E580) 
+0000000020D0E560: remove_message 
+0000000020D0E568: move_deallocate_return_cQ ok 0 
+0000000020D0E580: wait_f f(0000000020D0E550) 
+
+0000000020D0E590: i_func_info_IaaI 0 linkmon start_critic 0 
+0000000020D0E5B8: move_x1_c critic 
+0000000020D0E5C8: move_nx [] x(2) 
+0000000020D0E5D8: move_cr linkmon r(0) 
+0000000020D0E5E8: allocate_tt 0 3 
+0000000020D0E5F8: call_bif_e erlang:spawn/3 
+0000000020D0E608: deallocate_return_Q 0 
+
+0000000020D0E618: i_func_info_IaaI 0 linkmon judge 3 
+0000000020D0E640: allocate_heap_zero_tIt 1 6 3 
+0000000020D0E658: self_x x(3) 
+0000000020D0E668: move_ry r(0) y(0) 
+0000000020D0E678: i_put_tuple_xI x(4) 2  x(1) x(2)
+0000000020D0E698: i_put_tuple_xI x(1) 2  x(3) x(4)
+0000000020D0E6B8: send 
+0000000020D0E6C0: i_loop_rec_f f(0000000020D0E758) 
+0000000020D0E6D0: is_tuple_of_arity_frA f(0000000020D0E748) r(0) 2 
+0000000020D0E6E8: i_get_tuple_element_xPx x(0) 0 x(1) 
+0000000020D0E700: is_eq_exact_fxy f(0000000020D0E748) x(1) y(0) 
+0000000020D0E718: i_get_tuple_element_xPx x(0) 1 x(0) 
+0000000020D0E730: remove_message 
+0000000020D0E738: deallocate_return_Q 1 
+0000000020D0E748: loop_rec_end_f f(0000000020D0E6C0) 
+0000000020D0E758: i_wait_timeout_locked_fI f(0000000020D0E6C0) 2000 
+0000000020D0E770: timeout 
+0000000020D0E778: move_deallocate_return_cQ timeout 1 
+
+0000000020D0E790: i_func_info_IaaI 0 linkmon critic 0 
+0000000020D0E7B8: allocate_tt 0 0 
+0000000020D0E7C8: i_loop_rec_f f(0000000020D0EB48) 
+0000000020D0E7D8: is_tuple_of_arity_frA f(0000000020D0EB38) r(0) 2 
+0000000020D0E7F0: i_get_tuple_element2_xPx x(0) 0 x(1) 
+0000000020D0E808: is_tuple_of_arity_fxA f(0000000020D0EB38) x(2) 2 
+0000000020D0E828: i_get_tuple_element2_xPx x(2) 0 x(3) 
+0000000020D0E840: is_nonempty_list_get_list_fxxx f(0000000020D0EAC8) x(3) x(5) x(6) 
+0000000020D0E858: i_select_val_lins_xfI x(5) f(0000000020D0EAC8) 4 74 82 83 -1 f(0000000020D0E968) f(0000000020D0EA18) f(0000000020D0E8B8) f(0000000020D0EAC8) 
+0000000020D0E8B8: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(6) "ystem of a Downtime" 
+0000000020D0E8D8: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(4) "Memoize" 
+0000000020D0E8F8: remove_message 
+0000000020D0E900: self_x x(0) 
+0000000020D0E910: test_heap_It 3 2 
+0000000020D0E920: i_put_tuple_xI x(2) 2  x(0) "They're not Johnny Crash but they're good."
+0000000020D0E940: move_shift_xxx x(2) x(1) x(0) 
+0000000020D0E950: send 
+0000000020D0E958: jump_f f(0000000020D0EB58) 
+0000000020D0E968: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(6) "ohnny Crash" 
+0000000020D0E988: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(4) "The Token Ring of Fire" 
+0000000020D0E9A8: remove_message 
+0000000020D0E9B0: self_x x(0) 
+0000000020D0E9C0: test_heap_It 3 2 
+0000000020D0E9D0: i_put_tuple_xI x(2) 2  x(0) "Simply incredible."
+0000000020D0E9F0: move_shift_xxx x(2) x(1) x(0) 
+0000000020D0EA00: send 
+0000000020D0EA08: jump_f f(0000000020D0EB58) 
+0000000020D0EA18: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(6) "age Against the Turing Machine" 
+0000000020D0EA38: i_is_eq_exact_literal_fxc f(0000000020D0EAC8) x(4) "Unit Testify" 
+0000000020D0EA58: remove_message 
+0000000020D0EA60: self_x x(0) 
+0000000020D0EA70: test_heap_It 3 2 
+0000000020D0EA80: i_put_tuple_xI x(2) 2  x(0) "They are great!"
+0000000020D0EAA0: move_shift_xxx x(2) x(1) x(0) 
+0000000020D0EAB0: send 
+0000000020D0EAB8: jump_f f(0000000020D0EB58) 
+0000000020D0EAC8: remove_message 
+0000000020D0EAD0: self_x x(0) 
+0000000020D0EAE0: test_heap_It 3 2 
+0000000020D0EAF0: i_put_tuple_xI x(2) 2  x(0) "They are terrible!"
+0000000020D0EB10: move_shift_xxx x(2) x(1) x(0) 
+0000000020D0EB20: send 
+0000000020D0EB28: jump_f f(0000000020D0EB58) 
+0000000020D0EB38: loop_rec_end_f f(0000000020D0E7C8) 
+0000000020D0EB48: wait_f f(0000000020D0E7C8) 
+0000000020D0EB58: i_call_last_fP linkmon:critic/0 0 
+
+0000000020D0EB70: i_func_info_IaaI 0 linkmon start_critic2 0 
+0000000020D0EB98: move_x1_c restarter 
+0000000020D0EBA8: move_nx [] x(2) 
+0000000020D0EBB8: move_cr linkmon r(0) 
+0000000020D0EBC8: allocate_tt 0 3 
+0000000020D0EBD8: call_bif_e erlang:spawn/3 
+0000000020D0EBE8: deallocate_return_Q 0 
+
+0000000020D0EBF8: i_func_info_IaaI 0 linkmon restarter 0 
+0000000020D0EC20: allocate_zero_tt 1 0 
+0000000020D0EC30: move_x1_c true 
+0000000020D0EC40: move_cr trap_exit r(0) 
+0000000020D0EC50: call_bif_e erlang:process_flag/2 
+0000000020D0EC60: move_x1_c critic2 
+0000000020D0EC70: move_nx [] x(2) 
+0000000020D0EC80: move_cr linkmon r(0) 
+0000000020D0EC90: call_bif_e erlang:spawn_link/3 
+0000000020D0ECA0: move_rx r(0) x(1) 
+0000000020D0ECB0: move_cr critic r(0) 
+0000000020D0ECC0: move_xy x(1) y(0) 
+0000000020D0ECD0: call_bif_e erlang:register/2 
+0000000020D0ECE0: i_loop_rec_f f(0000000020D0EE10) 
+0000000020D0ECF0: is_tuple_of_arity_frA f(0000000020D0EE00) r(0) 3 
+0000000020D0ED08: i_get_tuple_element_xPx x(0) 0 x(1) 
+0000000020D0ED20: i_is_eq_exact_immed_fxc f(0000000020D0EE00) x(1) 'EXIT' 
+0000000020D0ED40: i_get_tuple_element2_xPx x(0) 1 x(2) 
+0000000020D0ED58: i_select_val2_xfccff x(3) f(0000000020D0EDC8) shutdown normal f(0000000020D0ED90) f(0000000020D0ED90) 
+0000000020D0ED90: is_eq_exact_fxy f(0000000020D0EE00) x(2) y(0) 
+0000000020D0EDA8: remove_message 
+0000000020D0EDB0: move_deallocate_return_cQ ok 1 
+0000000020D0EDC8: is_eq_exact_fxy f(0000000020D0EE00) x(2) y(0) 
+0000000020D0EDE0: remove_message 
+0000000020D0EDE8: i_call_last_fP linkmon:restarter/0 1 
+0000000020D0EE00: loop_rec_end_f f(0000000020D0ECE0) 
+0000000020D0EE10: wait_f f(0000000020D0ECE0) 
+
+0000000020D0EE20: i_func_info_IaaI 0 linkmon judge2 2 
+0000000020D0EE48: allocate_tt 2 2 
+0000000020D0EE58: move2_par_xyxy x(1) y(0) x(0) y(1) 
+0000000020D0EE68: recv_mark_f f(0000000020D0EF40) 
+0000000020D0EE78: call_bif_e erlang:make_ref/0 
+0000000020D0EE88: test_heap_It 7 1 
+0000000020D0EE98: self_x x(1) 
+0000000020D0EEA8: i_put_tuple_xI x(2) 2  x(2) x(1)
+0000000020D0EEC8: move_ry r(0) y(1) 
+0000000020D0EED8: i_put_tuple_xI x(3) 3  x(1) x(2) x(2)
+0000000020D0EF00: move_xx x(3) x(1) 
+0000000020D0EF10: init_y y(0) 
+0000000020D0EF20: move_cr critic r(0) 
+0000000020D0EF30: send 
+0000000020D0EF38: i_recv_set 
+0000000020D0EF40: i_loop_rec_f f(0000000020D0EFD8) 
+0000000020D0EF50: is_tuple_of_arity_frA f(0000000020D0EFC8) r(0) 2 
+0000000020D0EF68: i_get_tuple_element_xPx x(0) 0 x(1) 
+0000000020D0EF80: is_eq_exact_fxy f(0000000020D0EFC8) x(1) y(1) 
+0000000020D0EF98: i_get_tuple_element_xPx x(0) 1 x(0) 
+0000000020D0EFB0: remove_message 
+0000000020D0EFB8: deallocate_return_Q 2 
+0000000020D0EFC8: loop_rec_end_f f(0000000020D0EF40) 
+0000000020D0EFD8: i_wait_timeout_locked_fI f(0000000020D0EF40) 2000 
+0000000020D0EFF0: timeout 
+0000000020D0EFF8: move_deallocate_return_cQ timeout 2 
+
+0000000020D0F010: i_func_info_IaaI 0 linkmon critic2 0 
+0000000020D0F038: allocate_tt 0 0 
+0000000020D0F048: i_loop_rec_f f(0000000020D0F388) 
+0000000020D0F058: is_tuple_of_arity_frA f(0000000020D0F378) r(0) 3 
+0000000020D0F070: i_get_tuple_element3_xPx x(0) 0 x(1) 
+0000000020D0F088: is_tuple_of_arity_fxA f(0000000020D0F378) x(3) 2 
+0000000020D0F0A8: i_get_tuple_element2_xPx x(3) 0 x(4) 
+0000000020D0F0C0: is_nonempty_list_get_list_fxxx f(0000000020D0F318) x(4) x(6) x(7) 
+0000000020D0F0D8: i_select_val_lins_xfI x(6) f(0000000020D0F318) 4 74 82 83 -1 f(0000000020D0F1D8) f(0000000020D0F278) f(0000000020D0F138) f(0000000020D0F318) 
+0000000020D0F138: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(7) "ystem of a Downtime" 
+0000000020D0F158: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(5) "Memoize" 
+0000000020D0F178: remove_message 
+0000000020D0F180: test_heap_It 3 3 
+0000000020D0F190: i_put_tuple_xI x(3) 2  x(2) "They're not Johnny Crash but they're good."
+0000000020D0F1B0: move_shift_xxx x(3) x(1) x(0) 
+0000000020D0F1C0: send 
+0000000020D0F1C8: jump_f f(0000000020D0F398) 
+0000000020D0F1D8: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(7) "ohnny Crash" 
+0000000020D0F1F8: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(5) "The Token Ring of Fire" 
+0000000020D0F218: remove_message 
+0000000020D0F220: test_heap_It 3 3 
+0000000020D0F230: i_put_tuple_xI x(3) 2  x(2) "Simply incredible."
+0000000020D0F250: move_shift_xxx x(3) x(1) x(0) 
+0000000020D0F260: send 
+0000000020D0F268: jump_f f(0000000020D0F398) 
+0000000020D0F278: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(7) "age Against the Turing Machine" 
+0000000020D0F298: i_is_eq_exact_literal_fxc f(0000000020D0F318) x(5) "Unit Testify" 
+0000000020D0F2B8: remove_message 
+0000000020D0F2C0: test_heap_It 3 3 
+0000000020D0F2D0: i_put_tuple_xI x(3) 2  x(2) "They are great!"
+0000000020D0F2F0: move_shift_xxx x(3) x(1) x(0) 
+0000000020D0F300: send 
+0000000020D0F308: jump_f f(0000000020D0F398) 
+0000000020D0F318: remove_message 
+0000000020D0F320: test_heap_It 3 3 
+0000000020D0F330: i_put_tuple_xI x(3) 2  x(2) "They are terrible!"
+0000000020D0F350: move_shift_xxx x(3) x(1) x(0) 
+0000000020D0F360: send 
+0000000020D0F368: jump_f f(0000000020D0F398) 
+0000000020D0F378: loop_rec_end_f f(0000000020D0F048) 
+0000000020D0F388: wait_f f(0000000020D0F048) 
+0000000020D0F398: i_call_last_fP linkmon:critic2/0 0 
+
+0000000020D0F3B0: i_func_info_IaaI 0 linkmon module_info 0 
+0000000020D0F3D8: move_cr linkmon r(0) 
+0000000020D0F3E8: allocate_tt 0 1 
+0000000020D0F3F8: call_bif_e erlang:get_module_info/1 
+0000000020D0F408: deallocate_return_Q 0 
+
+0000000020D0F418: i_func_info_IaaI 0 linkmon module_info 1 
+0000000020D0F440: move_rx r(0) x(1) 
+0000000020D0F450: move_cr linkmon r(0) 
+0000000020D0F460: allocate_tt 0 2 
+0000000020D0F470: call_bif_e erlang:get_module_info/2 
+0000000020D0F480: deallocate_return_Q 0 
+
+0000000020D0F490: i_func_info_IaaI 0 linkmon '-chain/1-fun-0-' 1 
+0000000020D0F4B8: i_increment_rIId r(0) -1 1 x(0) 
+0000000020D0F4D8: i_call_only_f linkmon:chain/1 
+
